@@ -8,7 +8,7 @@
 <title>Contact Manager</title>
 </head>
 <body>
-<h1>Contact Manager</h1>
+<h1>Contact Manager pankaj/h1>
 <s:actionerror/>
  
 <s:form action="add" method="post">
