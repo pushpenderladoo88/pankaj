@@ -12,7 +12,7 @@ import net.pankaj.util.HibernateUtil;
 public class ContactManager extends HibernateUtil {
  
     public Contact add(Contact contact) {
-        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+        Session session =HibernateUtil.getSessionFactory().getCurrentSession();
         session.beginTransaction();
         session.save(contact);
         session.getTransaction().commit();
@@ -28,6 +28,26 @@ public class ContactManager extends HibernateUtil {
         session.getTransaction().commit();
         return contact;
     }
+    
+    
+    public Contact update(Contact contact)
+    {
+      Session session=HibernateUtil.getSessionFactory().getCurrentSession();	
+      session.beginTransaction().begin();
+      Contact contact1=(Contact)session.get(Contact.class, contact.getId());
+      if(contact1!=null)
+      {
+        contact1.setFirstName(contact.getFirstName());
+        contact1.setLastName(contact.getLastName());
+        contact1.setEmailId(contact.getEmailId());
+        contact1.setCellNo(contact.getCellNo());
+        session.update(contact1);
+      }
+      session.beginTransaction().commit();
+      return contact1;
+      
+    }
+  
  
     public List<Contact> list() {
          

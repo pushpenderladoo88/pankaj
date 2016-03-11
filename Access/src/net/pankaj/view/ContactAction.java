@@ -27,6 +27,7 @@ public class ContactAction extends ActionSupport {
         return SUCCESS;
     }
  
+      
     public String add() {
     	System.out.println("inside add method");
         System.out.println(getContact());
@@ -43,7 +44,16 @@ public class ContactAction extends ActionSupport {
         contactManager.delete(getId());
         return SUCCESS;
     }
- 
+   
+    public String update(){
+    	try{
+    	contactManager.update(getContact());
+    	}
+    	catch (Exception e){
+    		e.printStackTrace();
+    	}
+    	return SUCCESS;
+    }
     public Contact getContact() {
         return contact;
     }
@@ -67,4 +77,6 @@ public class ContactAction extends ActionSupport {
     public void setId(Long id) {
         this.id = id;
     }
+    
+    
 }

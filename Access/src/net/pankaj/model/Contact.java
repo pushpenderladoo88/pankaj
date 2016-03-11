@@ -8,11 +8,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import com.opensymphony.xwork2.ActionSupport;
  
 @Entity
 @Table(name="Contacts")
-public class Contact implements Serializable{
-     
+public class Contact extends ActionSupport implements Serializable{
+    
     private static final long serialVersionUID = -8767337896773261247L;
  
     private Long id;
@@ -82,5 +84,20 @@ public class Contact implements Serializable{
     }
     public void setWebsite(String website) {
         this.website = website;
+    }
+    public void validate()
+    {
+       if (firstName == null || firstName.trim().equals(""))
+       {
+          addFieldError("firstName","The name is required");
+       }
+       if (lastName == null || lastName.trim().equals(""))
+       {
+          addFieldError("lastName","The name is required");
+       }
+       if (cellNo != "\\d+")
+       {
+          addFieldError("cellNo","Cell number cannot have any character");
+       }
     }
 }

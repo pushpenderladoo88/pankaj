@@ -21,9 +21,14 @@
             <result name="success" type="chain">index</result>
         </action>
  
+        <action name="update"
+            class="net.pankaj.view.ContactAction" method="update">
+            <result name="success" type="chain">update</result>
+        </action>  
+              
         <action name="index"
             class="net.pankaj.view.ContactAction">
-            <result name="success">index.jsp</result>
+            <result name="success">show.jsp</result>
         </action>
     </package>
 </struts>
