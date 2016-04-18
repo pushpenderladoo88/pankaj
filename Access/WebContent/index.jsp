@@ -5,21 +5,52 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" type="text/css" href="style.css">
 <title>Contact Manager</title>
+ <script type="text/javascript">
+            function validate()
+            {
+                var a = document.getElementById("a");
+                var b = document.getElementById("b");
+                var c = document.getElementById("c");
+                var d = document.getElementById("d").value;
+                var h = document.getElementById("h");
+                var valid = true;
+                if(a.value.length<=0 || b.value.length<=0 || c.value.length<=0 || d.value.length<=0)
+                    {
+                        alert("Don't leave the field empty!");
+                        valid = false;
+                    }
+                else{
+                	if(isNaN(d))
+                		{
+                		alert("Please enter valid phone number");
+                		valid = false;
+                		}
+                		
+                }
+                return valid;
+                
+            };
+
+        </script>
 </head>
 <body>
+<div class="add">
 <h1> Contact Manager Pankaj</h1>
 <s:actionerror/>
  
-<s:form action="add" method="post">
-    <s:textfield name="contact.firstName" label="Firstname"/>
-    <s:textfield name="contact.lastName" label="Lastname"/>
-    <s:textfield name="contact.emailId" label="Email"/>
-    <s:textfield name="contact.cellNo" label="Cell No."/>
-     <!-- <s:textfield name="contact.website" label="Homepage"/> --> 
-    <s:textfield name="contact.birthDate" label="Birthdate"/>
-    <s:submit value="Add Contact" align="center"/>
-</s:form>
+<s:form action="add" method="post" onsubmit="return validate();" >
 
+
+    <s:textfield name="contact.firstName" label="Firstname" id="a" placeholder/>
+    <s:textfield name="contact.lastName" label="Lastname" id="b"/>
+    <s:textfield name="contact.emailId" label="Email" id="c" placeholder="Email"/>
+    <s:textfield name="contact.cellNo" label="Cell No." id="d"/> 
+    <s:textfield name="contact.birthDate" label="Birthdate (MM/DD/YY)" id="h"/>
+    <s:submit value="Add Contact" align="center"/>
+    
+</s:form>
+</div>
 </body>
 </html>

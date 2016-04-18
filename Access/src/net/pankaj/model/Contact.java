@@ -53,14 +53,6 @@ public class Contact extends ActionSupport implements Serializable{
     public Date getBirthDate() {
         return birthDate;
     }
-    @Column(name="website")
-    public String getWebsite() {
-        return website;
-    }
-    @Column(name="created")
-    public Date getCreated() {
-        return created;
-    }
     public void setId(Long id) {
         this.id = id;
     }
@@ -79,25 +71,5 @@ public class Contact extends ActionSupport implements Serializable{
     public void setBirthDate(Date birthDate) {
         this.birthDate = birthDate;
     }
-    public void setCreated(Date created) {
-        this.created = created;
-    }
-    public void setWebsite(String website) {
-        this.website = website;
-    }
-    public void validate()
-    {
-       if (firstName == null || firstName.trim().equals(""))
-       {
-          addFieldError("firstName","The name is required");
-       }
-       if (lastName == null || lastName.trim().equals(""))
-       {
-          addFieldError("lastName","The name is required");
-       }
-       if (cellNo != "\\d+")
-       {
-          addFieldError("cellNo","Cell number cannot have any character");
-       }
-    }
+    
 }
