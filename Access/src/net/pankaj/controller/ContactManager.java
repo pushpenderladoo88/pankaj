@@ -12,7 +12,8 @@ import net.pankaj.util.HibernateUtil;
 public class ContactManager extends HibernateUtil {
  
     public Contact add(Contact contact){
-        Session session = HibernateUtil.getSessionFactory().getCurrentSession();        session.beginTransaction();
+        Session session = HibernateUtil.getSessionFactory().getCurrentSession();       
+        session.beginTransaction();
         session.save(contact);
         session.getTransaction().commit();
         return contact;
