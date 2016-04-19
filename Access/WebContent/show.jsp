@@ -32,6 +32,7 @@
         <td><s:property value="emailId"/></td>
         <td><s:property value="cellNo"/></td>
         <td><s:property value="birthDate"/></td>
+
         <td><a href="delete?id=<s:property value="id"/>">delete</a></td>
         <td><a href="update.jsp?id=<s:property value="id"/>">update</a></td>
     </tr> 

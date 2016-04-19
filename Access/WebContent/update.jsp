@@ -50,6 +50,5 @@
     <s:submit value="Update Contact" align="center"/>
 </s:form>
 </div>
-
 </body>
 </html>

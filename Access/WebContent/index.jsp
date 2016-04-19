@@ -39,18 +39,16 @@
 <div class="add">
 <h1> Contact Manager Pankaj</h1>
 <s:actionerror/>
- 
 <s:form action="add" method="post" onsubmit="return validate();" >
-
-
-    <s:textfield name="contact.firstName" label="Firstname" id="a" placeholder/>
+    <s:textfield name="contact.firstName" label="Firstname" id="a"/>
     <s:textfield name="contact.lastName" label="Lastname" id="b"/>
-    <s:textfield name="contact.emailId" label="Email" id="c" placeholder="Email"/>
+    <s:textfield name="contact.emailId" label="Email" id="c"/>
     <s:textfield name="contact.cellNo" label="Cell No." id="d"/> 
     <s:textfield name="contact.birthDate" label="Birthdate (MM/DD/YY)" id="h"/>
     <s:submit value="Add Contact" align="center"/>
     
 </s:form>
+
 </div>
 </body>
 </html>
