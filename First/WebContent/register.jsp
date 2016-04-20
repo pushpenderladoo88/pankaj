@@ -37,15 +37,25 @@
 </head>
 <body>
 <div class="add">
-<h1> Contact Manager Pankaj</h1>
+<h1> Signup</h1>
 <s:actionerror/>
 <s:form action="add" method="post" onsubmit="return validate();" >
-    <s:textfield name="contact.firstName" label="Firstname" id="a"/>
-    <s:textfield name="contact.lastName" label="Lastname" id="b"/>
-    <s:textfield name="contact.emailId" label="Email" id="c"/>
-    <s:textfield name="contact.cellNo" label="Cell No." id="d"/> 
-    <s:textfield name="contact.birthDate" label="Birthdate (MM/DD/YY)" id="h"/>
-    <s:submit value="Add Contact" align="center"/>
+    <s:textfield name="Contact.name" label="Name"/>
+    <s:textfield name="contact.firstName" label="Firstname"/>
+    <s:textfield name="contact.lastName" label="Lastname"/>
+    <s:textfield name="Contact.userName" label="Username"/>
+    <s:textfield type="password" name="Contact.password" label="Password"/>
+    <s:textfield type="password" name="Contact.confirmPasswrd" label="ConfirmPassword"/>
+    <s:textfield name="contact.emailId" label="Email"/>
+    <s:textfield name="contact.birthDate" label="Birthdate (MM/DD/YY)"/>
+    <p>Gender<input type="radio" name="Contact.gender" label="Male">
+    <input type="radio" name="Contact.gender" label="Female"></p>
+    <s:textfield name="contact.cellNo" label="Cell No."/>
+    <s:textfield name="Contact.contactNo" label="Contact No."/> 
+    <s:textfield name="Contact.address" label="Address"/>
+    <s:textfield name="Contact.city" label="City"/> 
+    <s:textfield name="contact.state" label="state"/> 
+    <s:submit value="Submit" align="center"/>
     
 </s:form>
 
