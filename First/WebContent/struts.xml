@@ -13,9 +13,8 @@
         <action name="add" 
          class="net.pankaj.view.ContactAction" method="add">
             <result name="success" type="chain">index</result>
-           <!--  <result name="input" type="chain">index</result> -->
         </action>
- 
+         
         <action name="delete"
             class="net.pankaj.view.ContactAction" method="delete">
             <result name="success" type="chain">index</result>

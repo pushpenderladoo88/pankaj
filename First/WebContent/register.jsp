@@ -48,8 +48,8 @@
     <s:textfield type="password" name="Contact.confirmPasswrd" label="ConfirmPassword"/>
     <s:textfield name="contact.emailId" label="Email"/>
     <s:textfield name="contact.birthDate" label="Birthdate (MM/DD/YY)"/>
-    <p>Gender<input type="radio" name="Contact.gender" label="Male">
-    <input type="radio" name="Contact.gender" label="Female"></p>
+    <p>Gender Male<input type="radio" name="Contact.gender">
+    Female<input type="radio" name="Contact.gender"></p>
     <s:textfield name="contact.cellNo" label="Cell No."/>
     <s:textfield name="Contact.contactNo" label="Contact No."/> 
     <s:textfield name="Contact.address" label="Address"/>

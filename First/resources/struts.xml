@@ -30,6 +30,11 @@
             class="net.pankaj.view.ContactAction">
             <result name="success">show.jsp</result>
         </action>
+        
+        <action name="Signup"
+            class="net.pankaj.view.ContactAction">
+            <result name="success">register.jsp</result>
+         </action>
     </package>
 
 </struts>
