@@ -14,9 +14,7 @@
 </head>
 <body>
  <h3>Pie Chart</h3>
-        <%
-                response.setIntHeader("Refresh", 10);
-        %>
+ 
         <form id="formId">
            <input type="button" onclick="refreshPage()" value="Refresh Page" />
            <br /> <img src="displayChart" />

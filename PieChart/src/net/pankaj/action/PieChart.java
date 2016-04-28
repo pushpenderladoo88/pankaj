@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartUtilities;
 import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.data.jdbc.JDBCCategoryDataset;
 import org.jfree.data.jdbc.JDBCPieDataset;
 
 import net.pankaj.jdbc.DataAccess;
@@ -26,30 +28,29 @@ public class PieChart extends HttpServlet {
         }
 
         public void doGet(HttpServletRequest request, HttpServletResponse response)
-                        throws ServletException, IOException {
-                JDBCPieDataset dataSet = new JDBCPieDataset(dbConnection);
+                throws ServletException, IOException {
+        JDBCCategoryDataset dataset = new JDBCCategoryDataset(dbConnection);
 
-                try {
-                dataSet.executeQuery("SELECT SOURCE,PERCENTAGE FROM AIR_POLLUTION ORDER BY PERCENTAGE");
-                JFreeChart chart = ChartFactory.createPieChart(
-                 "air", 
-                 dataSet,                    
-                 true,                    
-                 true,                     
-                 false                     
-                 );
-                        
-                if (chart != null) {
-                        chart.setBorderVisible(true);
-                        int width = 600;
-                        int height = 400;
-                        response.setContentType("image/jpeg");
-                        OutputStream out = response.getOutputStream();
-                        ChartUtilities.writeChartAsJPEG(out, chart, width, height);
-                }
-                }
-                catch (SQLException e) {
-                        System.err.println(e.getMessage());
-                }
+        try {
+        dataset.executeQuery("SELECT source,percentage FROM air_pollution ORDER BY percentage");
+
+        JFreeChart chart = ChartFactory.createBarChart(
+               "air", "source", "percentage",
+               dataset, PlotOrientation.VERTICAL, false, true, false);           
+               chart.setBorderVisible(true);
+
+        if (chart != null) {
+                int width = 600;
+                int height = 400;
+                response.setContentType("image/jpeg");
+                OutputStream out = response.getOutputStream();
+                ChartUtilities.writeChartAsJPEG(out, chart, width, height);
         }
+        }
+        catch (SQLException e) {
+                System.err.println(e.getMessage());
+        }
+        }
+
 }
+
