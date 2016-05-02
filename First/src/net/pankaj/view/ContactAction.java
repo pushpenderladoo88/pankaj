@@ -28,15 +28,8 @@ public class ContactAction extends ActionSupport {
     }
  
       
-    public String add() {
+    public String signup() {
     	System.out.println("inside add method");
-        System.out.println(getContact());
-        try {
-            contactManager.add(getContact());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        this.contactList = contactManager.list();
         return SUCCESS;
     }
  

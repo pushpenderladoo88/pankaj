@@ -15,7 +15,6 @@ import org.jfree.chart.ChartUtilities;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.jdbc.JDBCCategoryDataset;
-import org.jfree.data.jdbc.JDBCPieDataset;
 
 import net.pankaj.jdbc.DataAccess;
 

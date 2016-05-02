@@ -10,9 +10,9 @@
  
     <package name="default" extends="struts-default" namespace="/">
     
-        <action name="add" 
-         class="net.pankaj.view.ContactAction" method="add">
-            <result name="success" type="chain">index</result>
+        <action name="signup" 
+         class="net.pankaj.view.ContactAction">
+            <result name="success">check.jsp</result>
         </action>
  
         <action name="delete"
@@ -31,10 +31,6 @@
             <result name="success">show.jsp</result>
         </action>
         
-        <action name="Signup"
-            class="net.pankaj.view.ContactAction">
-            <result name="success">register.jsp</result>
-         </action>
     </package>
 
 </struts>

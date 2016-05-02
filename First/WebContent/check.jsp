@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet" type="text/css" href="style.css">
 <title>Contact Manager</title>
- <script type="text/javascript">
+ <!--script type="text/javascript">
             function validate()
             {
                 var a = document.getElementById("a");
@@ -33,28 +33,14 @@
                 
             };
 
-        </script>
+        </script-->
 </head>
 <body>
 <div class="add">
-<h1> Signup</h1>
+<h1> Only managers can register for this program</h1>
 <s:actionerror/>
-<s:form action="add" method="post" onsubmit="return validate();" >
-    <s:textfield name="Contact.name" label="Name"/>
-    <s:textfield name="contact.firstName" label="Firstname"/>
-    <s:textfield name="contact.lastName" label="Lastname"/>
-    <s:textfield name="Contact.userName" label="Username"/>
-    <s:textfield type="password" name="Contact.password" label="Password"/>
-    <s:textfield type="password" name="Contact.confirmPasswrd" label="ConfirmPassword"/>
-    <s:textfield name="contact.emailId" label="Email"/>
-    <s:textfield name="contact.birthDate" label="Birthdate (MM/DD/YY)"/>
-    <p>Gender Male<input type="radio" name="Contact.gender">
-    Female<input type="radio" name="Contact.gender"></p>
-    <s:textfield name="contact.cellNo" label="Cell No."/>
-    <s:textfield name="Contact.contactNo" label="Contact No."/> 
-    <s:textfield name="Contact.address" label="Address"/>
-    <s:textfield name="Contact.city" label="City"/> 
-    <s:textfield name="contact.state" label="state"/> 
+<s:form action="check" method="post" onsubmit="return validate();" >
+    <s:textfield name="Contact.empid" label="Please enter your employment ID"/>
     <s:submit value="Submit" align="center"/>
     
 </s:form>

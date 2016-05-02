@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet" type="text/css" href="style.css">
 <title>Contact Manager</title>
- <script type="text/javascript">
+ <!--script type="text/javascript">
             function validate()
             {
                 var a = document.getElementById("a");
@@ -33,16 +33,16 @@
                 
             };
 
-        </script>
+        </script-->
 </head>
 <body>
 <div class="add">
 <h1 align="center"> Login/Register </h1>
 <s:actionerror/>
-<s:form action="login" method="post" onsubmit="return validate();" >
+<s:form action="signup" method="post" onsubmit="return validate();" >
     <s:textfield name="contact.UserName" label="Username" id="a"/>
     <s:textfield type="password" name="contact.Password" label="Password" id="b"/>
-    <s:submit value="Login"/>
+    <!--s:submit value="Login"/-->
     <s:submit value="Signup"/>
 </s:form>
 </div>

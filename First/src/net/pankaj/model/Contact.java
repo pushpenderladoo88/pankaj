@@ -23,9 +23,7 @@ public class Contact extends ActionSupport implements Serializable{
     private String emailId;
     private String cellNo;
     private Date birthDate;
-    private String website;
-     
-    private Date created;
+    
  
     @Id
     @GeneratedValue
