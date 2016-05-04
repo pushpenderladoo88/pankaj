@@ -25,7 +25,7 @@ function HasSpecialChars(passwd)
 {
 if(passwd.match(/.[!,@,#,$,%,^,&,*,?,_,~]/))return true; else return false;
 }
-function CheckPasswdStrength(password)
+function CheckPasswordStrength(password)
 {if (IsEnoughLength(password,14) && HasMixedCase(password) && HasNumeral(password) && HasSpecialChars(password))pass_strength = "<b><font style='color:olive'>Very strong</font></b>";else if (IsEnoughLength(password,8) && HasMixedCase(password) && (HasNumeral(password) || HasSpecialChars(password)))pass_strength = "<b><font style='color:Blue'>Strong</font></b>";
 else if (IsEnoughLength(password,8) && HasNumeral(password))pass_strength = "<b><font style='color:Green'>Good</font></b>";
 else pass_strength = "<b><font style='color:red'>Weak</font></b>";
@@ -33,21 +33,47 @@ document.getElementById('pwd_strength').innerHTML = pass_strength;
 }
 </script>
 
+
+<script type="text/javascript">
+function checkPass()
+{
+    var pass1 = document.getElementById('Password');
+    var pass2 = document.getElementById('CnfPassword');
+   
+    var message = document.getElementById('confirmMessage');
+    
+    var goodColor = "#66cc66";
+    var badColor = "#ff6666";
+    
+    if(pass1.value == pass2.value){
+        
+        pass2.style.backgroundColor = goodColor;
+        message.style.color = goodColor;
+        message.innerHTML = "Passwords Match!"
+    }else{
+       
+        pass2.style.backgroundColor = badColor;
+        message.style.color = badColor;
+        message.innerHTML = "Passwords Do Not Match!"
+    }
+}  
+</script>
+
 </head>
 <body>
 <div class="add">
 <h1 align="center"> Register </h1>
 <s:actionerror/>
-<s:form action="register" method="post">
+<s:form action="register" method="post" onclick="return Validate()">
     <s:textfield name="contact.UserName" label="Username"/>
-    <s:textfield type="password" name="Password" label="Password" onkeyup='CheckPasswordStrength(this.value);'/>
+    <s:textfield type="password" name="Password" label="Password" id="Password" onkeyup='CheckPasswordStrength(this.value);'/>
     <div id='pwd_strength'></div>
-    <s:textfield type="password" name="contact.CnfPassword" label="Confirm Password"/>
+    <s:textfield type="password" name="CnfPassword" label="Confirm Password" id="CnfPassword" onkeyup="checkPass(); return false;"/>
+    <span id="confirmMessage" class="confirmMessage"></span>
     <s:submit value="Submit"/>
      
 </s:form>
-<div style="padding-right:850px; font-size: 10px;color: #dadada;" id="dumdiv" align=center>
-    </div>
+
 </div>
 </body>
 </html>

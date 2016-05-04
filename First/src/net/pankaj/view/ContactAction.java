@@ -26,11 +26,11 @@ public class ContactAction extends ActionSupport {
         System.out.println("execute called");
         return SUCCESS;
     }
+    
  
       
-    public String signup() {
-    	System.out.println("inside add method");
-        return SUCCESS;
+    public String signup() throws Exception{
+        return "check";
     }
  
     public String delete() {
