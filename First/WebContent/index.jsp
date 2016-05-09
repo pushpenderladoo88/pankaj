@@ -39,11 +39,11 @@
 <div class="add">
 <h1 align="center"> Login/Register </h1>
 <s:actionerror/>
-<s:form action="signup" method="post">
+<s:form>
     <s:textfield name="contact.UserName" label="Username" id="a"/>
     <s:textfield type="password" name="contact.Password" label="Password" id="b"/>
-    <!--s:submit value="Login"/-->
-    <s:submit value="Signup"/>
+    <s:submit value="Login" action="login" method="post"/>
+    <s:submit value="Signup" action="signup" method="post"/>
 </s:form>
 </div>
 </body>
