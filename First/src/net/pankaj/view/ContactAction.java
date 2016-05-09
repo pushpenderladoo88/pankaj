@@ -3,6 +3,7 @@ package net.pankaj.view;
 import java.util.List;
 
 import net.pankaj.controller.ContactManager;
+import net.pankaj.jdbc.Check;
 import net.pankaj.model.Contact;
  
 import com.opensymphony.xwork2.ActionSupport;
@@ -27,9 +28,19 @@ public class ContactAction extends ActionSupport {
         return SUCCESS;
     }
     
- 
+ public string checkEmployee() {
+	 Check checkUser = new Check();
+	 //acti
+	 String userRole = checkUser.checkUserRole(userId)
+			 if(userRole.equalsIgnoreCase("MANAGER")){
+				 return "register";
+			 }else{
+				 return "registerError";
+			 }
+ }
       
     public String signup() throws Exception{
+    	
         return "check";
     }
  

@@ -9,10 +9,11 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class Check extends ActionSupport {
 
-   private String empid;
+   
    private String role;
 
-   public String execute() {
+   public String checkUserRole(String userId ) {
+	  String empRole;
       String ret = ERROR;
       Connection conn = null;
 
@@ -20,16 +21,16 @@ public class Check extends ActionSupport {
          String URL = "jdbc:mysql://localhost:3306/manage";
          Class.forName("com.mysql.jdbc.Driver");
          conn = DriverManager.getConnection(URL, "root", "12345");
-         String sql = "SELECT empid FROM manage WHERE";
-         sql+=" empid = ? ";
+         String sql = "SELECT A.ROLE_NAME FROM role_tbl A, user_tbl B WHERE B.USER_ID = ? AND A.ROLE_ID = B.ROLE_ID";
+         //sql+=" empid = ? ";
          PreparedStatement ps = conn.prepareStatement(sql);
-         ps.setString(1, empid);
+         ps.setString(1, userId);
          //ps.setString(2, role);
          ResultSet rs = ps.executeQuery();
 
          while (rs.next()) {
-            empid = rs.getString(1);
-            ret = SUCCESS;
+            empRole = rs.getString("ROLE_NAME");
+            ret = empRole;
          }
       } catch (Exception e) {
          ret = ERROR;

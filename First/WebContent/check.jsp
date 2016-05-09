@@ -40,7 +40,7 @@
 <h1> Only managers can register for this program</h1>
 <s:actionerror/>
 <s:form action="check" method="post" onsubmit="return validate();" >
-    <s:textfield name="empid" label="Employment ID"/>
+    <s:textfield name="contact.id" label="Employment ID"/>
     <s:submit value="Submit" align="center"/>
     
 </s:form>
