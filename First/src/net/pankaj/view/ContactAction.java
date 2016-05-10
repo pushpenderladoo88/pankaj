@@ -14,7 +14,7 @@ public class ContactAction extends ActionSupport {
     private static final long serialVersionUID = 9149826260758390091L;
     private Contact contact;
     private List<Contact> contactList;
-    private Long id;
+    private String id; 
  
     private ContactManager contactManager;
  
@@ -28,14 +28,14 @@ public class ContactAction extends ActionSupport {
         return SUCCESS;
     }
     
- public string checkEmployee() {
+ public String checkEmployee() {
 	 Check checkUser = new Check();
-	 //acti
-	 String userRole = checkUser.checkUserRole(userId)
+	 System.out.println("id is "+ id);
+	 String userRole = checkUser.checkUserRole(id);
 			 if(userRole.equalsIgnoreCase("MANAGER")){
 				 return "register";
 			 }else{
-				 return "registerError";
+				 return "profile";
 			 }
  }
       
@@ -44,23 +44,8 @@ public class ContactAction extends ActionSupport {
         return "check";
     }
  
-    public String delete() {
-        contactManager.delete(getId());
-        return SUCCESS;
-    }
+    
    
-    public String update(){
-    	try{
-    	contactManager.update(getContact());
-    	}
-    	catch (Exception e){
-    		e.printStackTrace();
-    	}
-    	return SUCCESS;
-    }
-    public Contact getContact() {
-        return contact;
-    }
  
     public List<Contact> getContactList() {
         return contactList;
@@ -74,13 +59,14 @@ public class ContactAction extends ActionSupport {
         this.contactList = contactsList;
     }
  
-    public Long getId() {
+    public String getId() {
         return id;
     }
  
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
-    
+
+	
     
 }

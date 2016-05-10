@@ -22,8 +22,9 @@
       </action>  
            
          <action name="check" 
-         class="et.pankaj.view.ContactAction" method="checkEmployee">
-         <result name="success">/register.jsp</result>
+         class="net.pankaj.view.ContactAction" method="checkEmployee">
+         <result name="register">/register.jsp</result>
+         <result name="profile">/profile.jsp</result>
       </action>
       
       
