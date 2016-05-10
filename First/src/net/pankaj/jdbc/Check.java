@@ -45,7 +45,6 @@ public class Check extends ActionSupport {
       return ret;
    }
 
-   
    public String getRole() {
       return role;
    }

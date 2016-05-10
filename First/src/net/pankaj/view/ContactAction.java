@@ -30,8 +30,12 @@ public class ContactAction extends ActionSupport {
     
  public String checkEmployee() {
 	 Check checkUser = new Check();
+<<<<<<< HEAD
 	 System.out.println("id is "+ id);
 	 String userRole = checkUser.checkUserRole(id);
+=======
+	 String userRole = checkUser.checkUserRole(userId);
+>>>>>>> refs/remotes/origin/master
 			 if(userRole.equalsIgnoreCase("MANAGER")){
 				 return "register";
 			 }else{
