@@ -28,10 +28,9 @@ public class ContactAction extends ActionSupport {
         return SUCCESS;
     }
     
- public string checkEmployee() {
+ public String checkEmployee() {
 	 Check checkUser = new Check();
-	 //acti
-	 String userRole = checkUser.checkUserRole(userId)
+	 String userRole = checkUser.checkUserRole(userId);
 			 if(userRole.equalsIgnoreCase("MANAGER")){
 				 return "register";
 			 }else{

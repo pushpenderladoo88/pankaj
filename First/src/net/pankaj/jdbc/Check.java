@@ -45,12 +45,12 @@ public class Check extends ActionSupport {
       return ret;
    }
 
-   public String getEmpid() {
-      return empid;
+   public String getEmpRole() {
+      return empRole;
    }
 
-   public void setEmpid(String empid) {
-      this.empid = empid;
+   public void setEmpRole(String empRole) {
+      this.empRole = empRole;
    }
 
    public String getRole() {
